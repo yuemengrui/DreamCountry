@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import qiniu
 
 access_key = 'uzc59bVURbUbazey9vrexXKocNKBUN8NuLijk57N'

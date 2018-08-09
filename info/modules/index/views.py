@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from flask import g, current_app, jsonify
 from flask import request
 from flask import session

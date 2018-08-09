@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import functools
 
 from flask import abort

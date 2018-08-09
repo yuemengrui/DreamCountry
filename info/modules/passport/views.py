@@ -1,4 +1,4 @@
-
+# -*- coding: UTF-8 -*-
 import random
 import re
 from os import abort
