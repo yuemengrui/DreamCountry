@@ -72,6 +72,14 @@ def get_news_detail(news_id):
         if news.user and (user in news.user.followers):
             is_followed = True
 
+    # 获取首页`新闻分类`信息
+    categories = []
+    try:
+        from info.models import Category
+        categories = Category.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+
     return render_template('news/detail.html',
                            user=user,
                            news=news,
@@ -80,7 +88,9 @@ def get_news_detail(news_id):
                            comments_li=comments_li,
                            like_comments=like_comments,
                            qiniu_domain=constants.QINIU_DOMIN_PREFIX,
-                           is_followed=is_followed)
+                           is_followed=is_followed,
+                           categories=categories
+                           )
 
 
 @news_blu.route('/collect', methods=['POST'])

@@ -96,8 +96,8 @@ def send_sms_code():
         current_app.looger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
     #
-    # if res != 0:
-    #     return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
+    if res != 0:
+        return jsonify(errno=RET.THIRDERR, errmsg='发送短信验证码失败')
 
     # 7. 返回应答，发送短信成功
     return jsonify(errno=RET.OK, errmsg='发送短信验证码成功')

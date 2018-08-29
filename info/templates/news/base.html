@@ -15,7 +15,14 @@
         <div class="header">
             <a href="/" class="logo fl"><img src="../../static/news/images/logo.png" alt="logo"></a>
             {# 网页导航内容块 #}
-            {% block menu %}{% endblock menu %}
+
+            <ul class="menu fl">
+                {# 显示首页`新闻分类`信息 #}
+                {% for category in categories %}
+                    <li class="{% if loop.index0 == 0 %}active{% endif %}" data-cid="{{ category.id }}"><a href="javascript:;">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+
             {# 判断用户是否登录 #}
             {% if user %}
                 {# 用户已登录，显示登录用户的信息 #}
@@ -62,7 +69,7 @@
         </div>
         <p class="copyright">
             报道中出现的商标及图像版权属于其合法持有人，只供传递信息之用，非商务用途。互动交流时请遵守理性，宽容，换位思考的原则。<br />
-            CopyRight © 2018 玩客资讯信息技术有限公司 All Rights Reserved<br />
+            CopyRight © 2018 梦想之邦 All Rights Reserved<br />
 电话：010-****888    京ICP备*******8号
         </p>
     </div>
